@@ -80,3 +80,16 @@ python examples/verify_reference_spec.py
 ```
 
 to verify feature counts, parameter counts, and output geometry.
+
+
+## Inference convention
+
+The released `predict_map` helper uses 32 × 32 patches, stride 16, and uniform
+overlap averaging. This is the convention retained for the public model-only
+release because it was used in the independent reconstruction check against
+saved LOYO prediction caches.
+
+The original study notebook also contains a separate case-study/full-grid
+inference path using a denser stride and Hann-weighted blending. That
+study-specific implementation is not part of this model-only release. The two
+paths should therefore not be treated as the same experiment-control routine.
