@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use DFAA-MemoryNet, please cite the software and associated paper."
+title: "DFAA-MemoryNet"
+type: software
+authors:
+  - family-names: "Serbouti"
+    given-names: "Imane"
+  - family-names: "Brocca"
+    given-names: "Luca"
+version: 1.0.0
+license: MIT
+repository-code: "https://github.com/imane-se/DFAA-MemoryNet"
