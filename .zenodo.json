@@ -1,0 +1,28 @@
+{
+  "creators": [
+    {
+      "name": "Serbouti, Imane"
+    },
+    {
+      "name": "Brocca, Luca"
+    }
+  ],
+  "title": "DFAA-MemoryNet",
+  "version": "1.0.0",
+  "access_right": "open",
+  "license": "mit",
+  "upload_type": "software",
+  "language": "eng",
+  "description": "DFAA-MemoryNet is a dual-task convolutional encoder-decoder for modelling near-surface soil-moisture response to drought-flood abrupt alternation under prescribed hydroclimatic forcing. This model-only release includes the architecture, predictor utilities, soil-moisture-memory inputs, training and normalization helpers, spatial inference, evaluation metrics, and reusable validation split utilities.",
+  "keywords": [
+    "DFAA",
+    "drought-flood abrupt alternation",
+    "soil moisture",
+    "soil-moisture memory",
+    "deep learning",
+    "Earth observation",
+    "hydrology",
+    "Sentinel-1",
+    "PEAI"
+  ]
+}
