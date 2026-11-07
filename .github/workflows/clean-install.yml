@@ -1,0 +1,36 @@
+name: Clean installation test
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  clean-install:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Upgrade packaging tools
+        run: python -m pip install --upgrade pip setuptools wheel
+
+      - name: Install DFAA-MemoryNet from scratch
+        run: python -m pip install -e .
+
+      - name: Check dependency consistency
+        run: python -m pip check
+
+      - name: Run synthetic quickstart
+        run: python examples/quickstart.py
+
+      - name: Verify scientific reference specification
+        run: python examples/verify_reference_spec.py
