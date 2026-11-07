@@ -87,6 +87,9 @@ of soil-moisture memory:
 The exact feature lists are defined in
 `src/dfaa_memorynet/predictors.py`.
 
+Reference channel counts are 25 (Full), 16 (Without SMM), 6 (Forcing + current
+RT1), and 5 (Forcing only).
+
 ## Model outputs
 
 DFAA-MemoryNet returns two pixel-wise output channels:
@@ -160,6 +163,18 @@ the required predictor fields have been prepared.
 
 It is not intended to reproduce every figure, table, sensitivity experiment, or
 derived research product reported in the associated manuscript.
+
+## Scientific verification
+
+The released implementation was checked against the validated v9.2 workflow.
+See `docs/scientific_verification.md` and run:
+
+```bash
+python examples/verify_reference_spec.py
+```
+
+The model-only release does not include the manuscript's study-specific
+anti-collapse model-selection callback or full experiment orchestration.
 
 ## Citation
 
