@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dfaa-memorynet"
+version = "1.0.0"
+description = "DFAA-MemoryNet dual-task model for memory-conditioned soil-moisture response prediction"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+  {name = "Imane Serbouti"}
+]
+dependencies = [
+  "numpy",
+  "pandas",
+  "xarray",
+  "scikit-learn",
+  "tensorflow"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
