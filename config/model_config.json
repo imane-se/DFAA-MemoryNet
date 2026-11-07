@@ -4,22 +4,37 @@
   "patch_size": 32,
   "training_stride": 16,
   "inference_stride": 16,
+  "inference_blending": "uniform overlap averaging",
   "batch_size": 4,
   "event_fraction_threshold": 0.5,
   "equal_area_fraction": 0.15,
+  "feature_counts": {
+    "full": 25,
+    "without_smm": 16,
+    "forcing_current_rt1": 6,
+    "forcing_only": 5
+  },
   "architecture": {
     "base_filters": 24,
     "dropout_scale": 1.05,
-    "learning_rate": 0.0002
+    "full_parameter_count": 1091570,
+    "without_smm_parameter_count": 1089626
+  },
+  "optimizer": {
+    "name": "AdamW",
+    "learning_rate": 0.0002,
+    "weight_decay": 0.00002,
+    "clipnorm": 1
   },
   "loss": {
     "fraction_weight": 0.75,
     "core_weight": 0.25,
-    "fraction_intensity_weight": 4.0,
+    "fraction_intensity_weight": 4,
     "event_bce_weight": 0.7,
     "event_tversky_weight": 0.3,
     "tversky_alpha": 0.45,
     "tversky_beta": 0.55,
-    "tversky_gamma": 1.0
-  }
+    "tversky_gamma": 1
+  },
+  "scope_note": "Study-specific anti-collapse model selection, event-catalogue construction, and held-out experiment orchestration are not part of the model-only release."
 }
