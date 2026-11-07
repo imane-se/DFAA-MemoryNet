@@ -1,0 +1,25 @@
+{
+  "model_version": "v9.2",
+  "forecast_horizon_weeks": 4,
+  "patch_size": 32,
+  "training_stride": 16,
+  "inference_stride": 16,
+  "batch_size": 4,
+  "event_fraction_threshold": 0.5,
+  "equal_area_fraction": 0.15,
+  "architecture": {
+    "base_filters": 24,
+    "dropout_scale": 1.05,
+    "learning_rate": 0.0002
+  },
+  "loss": {
+    "fraction_weight": 0.75,
+    "core_weight": 0.25,
+    "fraction_intensity_weight": 4.0,
+    "event_bce_weight": 0.7,
+    "event_tversky_weight": 0.3,
+    "tversky_alpha": 0.45,
+    "tversky_beta": 0.55,
+    "tversky_gamma": 1.0
+  }
+}
