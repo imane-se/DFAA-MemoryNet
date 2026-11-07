@@ -167,29 +167,25 @@ def feature_names_for_variant(variant: str) -> list[str]:
         return [f for f in FULL_FEATURE_NAMES if f not in SMM_FEATURES]
 
     if variant in {"forcing_current_rt1", "forcing+current_rt1"}:
-        keep = [
-            "pe_t", "dsm_t",
-            "pe_mean2", "pe_mean4",
-            "dsm_mean2", "dsm_mean4",
-            "pe_slope1", "dsm_slope1",
-            "pe_tplus1", "pe_tplus2", "pe_tplus3", "pe_tplus4",
-            "x_norm", "y_norm", "valid_mask",
-        ]
-        return keep
-
-    if variant in {"forcing_only", "forcing"}:
+        # Reference ablation: current forcing + prescribed t+1..t+4
+        # forcing + current observed RT1 response only (6 channels).
         return [
             "pe_t",
-            "pe_mean2",
-            "pe_mean4",
-            "pe_slope1",
             "pe_tplus1",
             "pe_tplus2",
             "pe_tplus3",
             "pe_tplus4",
-            "x_norm",
-            "y_norm",
-            "valid_mask",
+            "dsm_t",
+        ]
+
+    if variant in {"forcing_only", "forcing"}:
+        # Reference forcing-only ablation (5 channels).
+        return [
+            "pe_t",
+            "pe_tplus1",
+            "pe_tplus2",
+            "pe_tplus3",
+            "pe_tplus4",
         ]
 
     raise ValueError(f"Unknown model variant: {variant}")
